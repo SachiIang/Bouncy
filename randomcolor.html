@@ -29,6 +29,7 @@ function moveWindowBounce () {
   let vy = VELOCITY * (Math.random() > 0.5 ? 1 : -1)
 
   window.setInterval(() => {
+    openWindow()
     const x = window.screenX
     const y = window.screenY
     const width = window.outerWidth
@@ -75,9 +76,6 @@ setInterval(function(){
 }
 </style>
 </head>
-<body id = "random-background" onload="moveWindowBounce()">
-<button onclick="openWindow()">new window</button>
-<button onclick="focusWindows()">focus windows</button>
+<body id="random-background" onload="moveWindowBounce()" onclick="openWindow()">
 </body>
-
 </html>
