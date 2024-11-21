@@ -13,6 +13,8 @@ const VELOCITY = 15
 const MARGIN = 10
 const TICK_LENGTH = 50
 const rot = Math.ceil(Math.random(0,200))/200-1
+const vx = VELOCITY * rot
+const vy = (VELOCITY^2 - rot^2)^(1/2)
 
 function openWindow () {
   const { x, y } = getRandomCoords()
@@ -25,9 +27,6 @@ function openWindow () {
 }
 
 function moveWindowBounce () {
-  let vx = VELOCITY * rot
-  let vy = (VELOCITY^2 - rot^2)^(1/2)
-
   window.setInterval(() => {
     const x = window.screenX
     const y = window.screenY
